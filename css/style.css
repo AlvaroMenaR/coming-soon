@@ -36,11 +36,9 @@
 }
 
 form{
-
     position: absolute;
-
     align-self: center;
-    margin-top: 10%;
+    margin-top: 25%;
 }
 
 form input{
