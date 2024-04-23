@@ -28,11 +28,11 @@
 .hero p{
     /* position: absolute; */
     color: #101110;
-    background: no;
     font-size: 20px;
-
-
-
+    background-color: rgb(163, 163, 212);
+    color: aliceblue;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
 }
 
 form{
@@ -40,6 +40,7 @@ form{
     align-self: center;
     margin-top: 25%;
 }
+
 
 form input{
     border: 0;
