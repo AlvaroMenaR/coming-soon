@@ -15,21 +15,40 @@
 <body>
     <div class="hero card border-white text-white bg-dark">
         <img class="mx-auto d-block img-fluid" src="../coming-soon/images/background1.jpeg" alt="Card image cap">
-        <!-- <p>Suscríbete para mas detalles !!!</p> -->
-        <form>
-            <div>
-                <p class="fw-bold">Suscríbete para mas detalles !!!</p>
-            </div>
+        <div>
+            <p class="fw-bold">Suscríbete para mas detalles !!!</p>
+        </div>
+        <form name="submit-to-google-sheet">
             <input  type="email" name="Email" placeholder="your email" required>
             <button type="submit"><img src="../coming-soon/images/send-icon.png" alt=""></button>
+            <div>
+                <span id="msg" class="fw-bold"></span>
+            </div>
         </form>
     </div>
 
-
-    
 <!-- script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzuP_Sc7IPITwzX8Qz721zcnMtWSg_QJpssfDkVIIp9i803jCF2VdUq--aCkAvxZrE9/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+    
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Gracias por Suscribirte!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+    </script>
 </body>
 </html>

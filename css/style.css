@@ -26,19 +26,23 @@
     position: relative;
 }
 .hero p{
-    /* position: absolute; */
+    position: absolute;
+    margin-top: -83%;
+    right: 40%;
     color: #101110;
     font-size: 20px;
-    background-color: rgb(163, 163, 212);
-    color: aliceblue;
-    text-align: center;
-    border-radius: 10px 10px 10px 10px;
+    color: rgb(0, 5, 8);
+}
+.hero span{
+    color: rgb(0, 5, 8);
+    display: block;
+    margin-top: 2%;
 }
 
 form{
     position: absolute;
     align-self: center;
-    margin-top: 25%;
+    margin-top: 15%;
 }
 
 
@@ -46,7 +50,6 @@ form input{
     border: 0;
     outline: none;
     padding: 5px 10px;
-
     width: 300px;
     font-size: 16px;
 }
@@ -64,6 +67,7 @@ form button img{
     width: 30px;
     cursor: pointer;
 }
+
 
 
 
